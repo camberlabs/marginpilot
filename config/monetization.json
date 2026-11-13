@@ -1,0 +1,85 @@
+{
+  "brand": {
+    "name": "MarginPilot",
+    "tagline": "2026 SaaS, AI & Creator Fee Calculators",
+    "siteUrl": "https://esmalldev.github.io",
+    "indexNowKey": "mp2026f8a94c3e71b2d05968a4c1e7b3",
+    "lastVerifiedDate": "2026-11-13"
+  },
+  "digitalProduct": {
+    "enabled": true,
+    "title": "The 2026 Founder Margin & Pricing CFO Kit",
+    "subtitle": "Offline 24-Month SaaS & AI Runway Simulator + Spreadsheet Templates + MoR Tax Playbook",
+    "priceDisplay": "$19",
+    "originalPriceDisplay": "$49",
+    "checkoutUrl": "#pro-kit-preview",
+    "badge": "Instant Download (.ZIP — Excel/Sheets + Offline App)"
+  },
+  "affiliateLinks": {
+    "polar": {
+      "url": "https://polar.sh",
+      "ctaLabel": "Start Free on Polar.sh",
+      "programNote": "Developer MoR — 0% monthly fee on Starter, 3.8% Pro ladder past $1,380/mo"
+    },
+    "creem": {
+      "url": "https://creem.io",
+      "ctaLabel": "Try Creem (3.9% + 40¢)",
+      "programNote": "Low flat-rate indie MoR with zero international card surcharge"
+    },
+    "lemonsqueezy": {
+      "url": "https://www.lemonsqueezy.com",
+      "ctaLabel": "Launch on Lemon Squeezy",
+      "programNote": "All-in-one digital storefront & global VAT compliance"
+    },
+    "paddle": {
+      "url": "https://www.paddle.com",
+      "ctaLabel": "Scale B2B SaaS on Paddle",
+      "programNote": "All-inclusive 5% + 50¢ B2B Merchant of Record (no FX/intl surcharges)"
+    },
+    "dodopayments": {
+      "url": "https://dodopayments.com",
+      "ctaLabel": "Start with Dodo Payments",
+      "programNote": "Global AI & SaaS Merchant of Record built for emerging & global markets"
+    },
+    "stripe": {
+      "url": "https://stripe.com",
+      "ctaLabel": "Open Stripe Account",
+      "programNote": "Lowest domestic card rate (2.9% + 30¢) when managing your own tax compliance"
+    },
+    "whop": {
+      "url": "https://whop.com",
+      "ctaLabel": "Sell on Whop (2.7% Base)",
+      "programNote": "Communities, courses & software with 2.7% + 30¢ domestic card processing"
+    },
+    "gumroad": {
+      "url": "https://gumroad.com",
+      "ctaLabel": "Sell on Gumroad",
+      "programNote": "Fastest zero-setup creator storefront with built-in Discover marketplace"
+    },
+    "beehiiv": {
+      "url": "https://www.beehiiv.com",
+      "ctaLabel": "Switch to beehiiv (0% Cut)",
+      "programNote": "Keep 100% of paid newsletter revenue — 50% 12-mo partner commission program available"
+    },
+    "substack": {
+      "url": "https://substack.com",
+      "ctaLabel": "Publish on Substack",
+      "programNote": "$0 upfront cost with built-in reader network discovery"
+    },
+    "patreon": {
+      "url": "https://www.patreon.com",
+      "ctaLabel": "Launch on Patreon",
+      "programNote": "Membership tiers, community chat & creator patronage"
+    },
+    "shopify": {
+      "url": "https://www.shopify.com",
+      "ctaLabel": "Start Shopify Trial",
+      "programNote": "Full e-commerce checkout — high-converting affiliate bounty program"
+    },
+    "mercury": {
+      "url": "https://mercury.com",
+      "ctaLabel": "Open $0 SaaS Bank Account (Mercury)",
+      "programNote": "Recommended payout bank for Stripe, Polar & Paddle founders"
+    }
+  }
+}

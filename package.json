@@ -1,0 +1,24 @@
+{
+  "name": "marginpilot-pseo-engine",
+  "version": "1.0.0",
+  "description": "Zero-cost programmatic SEO SaaS & Creator Fee Calculator Network + Ready-to-Sell Digital Product",
+  "type": "module",
+  "scripts": {
+    "build:site": "node scripts/build.mjs",
+    "build:product": "node src/product/build-product.mjs",
+    "build": "npm run build:product && npm run build:site",
+    "verify": "node scripts/verify.mjs",
+    "preview": "node scripts/serve.mjs",
+    "indexnow": "node scripts/ping-indexnow.mjs",
+    "deploy": "node scripts/deploy-gh-pages.mjs",
+    "launch:github": "node scripts/launch-github.mjs"
+  },
+  "keywords": [
+    "saas-calculator",
+    "merchant-of-record",
+    "programmatic-seo",
+    "creator-economy",
+    "pricing-calculator"
+  ],
+  "license": "MIT"
+}

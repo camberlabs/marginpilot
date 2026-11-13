@@ -1,0 +1,408 @@
+export const PLATFORMS = [
+  {
+    id: 'polar',
+    slug: 'polar',
+    name: 'Polar.sh',
+    shortName: 'Polar',
+    category: 'mor',
+    categoryLabel: 'Merchant of Record (SaaS & Dev)',
+    isMoR: true,
+    affiliateKey: 'polar',
+    badge: 'Best Developer MoR Ladder',
+    tagline: 'Open-source developer MoR with a fee-buydown ladder from 5% down to 3.4%.',
+    bestFor: 'Indie hackers, AI apps, open-source monetization, and SaaS scaling past $1.4k MRR',
+    baseRatePct: 5.0,
+    fixedFeeUsd: 0.50,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 0,
+    subscriptionSurchargePct: 0,
+    paypalSurchargePct: 0,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 2.00,
+    payoutPct: 0.25,
+    tiers: [
+      { name: 'Starter ($0/mo)', monthlyUsd: 0, ratePct: 5.0, fixedUsd: 0.50 },
+      { name: 'Pro ($20/mo)', monthlyUsd: 20, ratePct: 3.8, fixedUsd: 0.40 },
+      { name: 'Growth ($100/mo)', monthlyUsd: 100, ratePct: 3.6, fixedUsd: 0.35 },
+      { name: 'Scale ($400/mo)', monthlyUsd: 400, ratePct: 3.4, fixedUsd: 0.30 }
+    ],
+    pros: [
+      'Full Merchant of Record: handles EU VAT, UK VAT, and US sales tax globally',
+      'Zero subscription renewal surcharge (unlike Lemon Squeezy\'s +0.5%)',
+      'Unique Pro tier ($20/mo) drops fee to 3.8% + 40¢ — pays for itself around ~$1,400/mo',
+      'Built-in license keys, GitHub repo access grants, and usage-based AI billing'
+    ],
+    cons: [
+      '+1.5% international card surcharge outside domestic region',
+      'Passes through minor Stripe payout fees ($2/mo active + 0.25%)'
+    ],
+    hiddenFeeWatch: 'Watch the +1.5% international card fee and remember to upgrade from Starter to Pro ($20/mo) once monthly volume passes ~$1,400.'
+  },
+  {
+    id: 'creem',
+    slug: 'creem',
+    name: 'Creem.io',
+    shortName: 'Creem',
+    category: 'mor',
+    categoryLabel: 'Merchant of Record (SaaS & AI)',
+    isMoR: true,
+    affiliateKey: 'creem',
+    badge: 'Lowest $0/mo Flat MoR',
+    tagline: 'Modern indie SaaS & AI Merchant of Record at 3.9% + 40¢ with $0 monthly fee.',
+    bestFor: 'Bootstrapped AI wrappers and global micro-SaaS under $5k MRR wanting zero fixed fees',
+    baseRatePct: 3.9,
+    fixedFeeUsd: 0.40,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 0,
+    fxSurchargePct: 0,
+    subscriptionSurchargePct: 0,
+    paypalSurchargePct: 0,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 0,
+    payoutPct: 0,
+    pros: [
+      'Low 3.9% + 40¢ baseline MoR rate with $0 monthly subscription',
+      'No extra international card or recurring billing surcharges on core checkout',
+      'Handles global sales tax, VAT compliance, and invoicing automatically'
+    ],
+    cons: [
+      'Newer ecosystem than Paddle or Stripe with fewer legacy enterprise integrations',
+      'Non-standard international payout rails can carry bank/FX spread fees'
+    ],
+    hiddenFeeWatch: 'Core checkout avoids international card surcharges, though non-USD/EUR bank payouts or affiliate network add-ons may add minor spread costs.'
+  },
+  {
+    id: 'paddle',
+    slug: 'paddle',
+    name: 'Paddle',
+    shortName: 'Paddle',
+    category: 'mor',
+    categoryLabel: 'Merchant of Record (B2B SaaS)',
+    isMoR: true,
+    affiliateKey: 'paddle',
+    badge: 'Best All-Inclusive Global MoR',
+    tagline: 'Enterprise-ready SaaS Merchant of Record with true 5% + 50¢ all-in global pricing.',
+    bestFor: 'Global B2B SaaS with high international/PayPal customer share and enterprise invoicing',
+    baseRatePct: 5.0,
+    fixedFeeUsd: 0.50,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 0,
+    fxSurchargePct: 0,
+    subscriptionSurchargePct: 0,
+    paypalSurchargePct: 0,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 0,
+    payoutPct: 0,
+    pros: [
+      '0% extra fee for international cards, PayPal, or recurring renewals',
+      'Battle-tested global tax/VAT compliance, B2B VAT ID validation, and invoicing',
+      'Often cheaper than Lemon Squeezy in practice when >30% of buyers are international'
+    ],
+    cons: [
+      'Stricter account approval & product review process than Gumroad or Stripe',
+      'No self-serve digital creator marketplace'
+    ],
+    hiddenFeeWatch: 'Virtually no stacked checkout surcharges—what looks like 5% + 50¢ actually stays 5% + 50¢ even on cross-border renewals.'
+  },
+  {
+    id: 'lemonsqueezy',
+    slug: 'lemon-squeezy',
+    name: 'Lemon Squeezy',
+    shortName: 'Lemon Squeezy',
+    category: 'mor',
+    categoryLabel: 'Merchant of Record (Digital & SaaS)',
+    isMoR: true,
+    affiliateKey: 'lemonsqueezy',
+    badge: 'Popular Digital Storefront MoR',
+    tagline: 'Polished hosted checkout, license keys, and MoR tax compliance (5% + 50¢ base).',
+    bestFor: 'Templates, desktop apps, WordPress/Figma plugins, and solo digital product stores',
+    baseRatePct: 5.0,
+    fixedFeeUsd: 0.50,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 0,
+    subscriptionSurchargePct: 0.5,
+    paypalSurchargePct: 1.5,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 0,
+    payoutPct: 0.5,
+    pros: [
+      'Turnkey hosted storefront, checkout overlay, software license keys, and affiliate hub',
+      'Full Merchant of Record handling global VAT & US state sales tax',
+      'Backed by Stripe infrastructure with strong developer documentation'
+    ],
+    cons: [
+      'Stacked surcharges: +0.5% subscriptions, +1.5% international cards, +1.5% PayPal',
+      'No volume fee-buydown tier like Polar Pro/Growth'
+    ],
+    hiddenFeeWatch: 'A recurring international PayPal subscription on Lemon Squeezy quietly jumps from 5% to 8.5% + 50¢ before payout fees.'
+  },
+  {
+    id: 'dodopayments',
+    slug: 'dodo-payments',
+    name: 'Dodo Payments',
+    shortName: 'Dodo Payments',
+    category: 'mor',
+    categoryLabel: 'Merchant of Record (Global SaaS & AI)',
+    isMoR: true,
+    affiliateKey: 'dodopayments',
+    badge: 'Global Founder Friendly MoR',
+    tagline: '4% + 40¢ base Merchant of Record supporting founders in 150+ countries.',
+    bestFor: 'AI & SaaS founders globally (including regions underserved by Stripe/Lemon Squeezy)',
+    baseRatePct: 4.0,
+    fixedFeeUsd: 0.40,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 0,
+    subscriptionSurchargePct: 0.5,
+    paypalSurchargePct: 3.0,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 0,
+    payoutPct: 0,
+    pros: [
+      'Competitive 4.0% + 40¢ base rate for domestic US card payments',
+      'Onboards founders across 150+ countries with full global MoR tax compliance',
+      'Supports usage-based AI token billing, license keys, and local payment methods'
+    ],
+    cons: [
+      '+1.5% international card fee, +0.5% subscription fee, and +3% wallet/PayPal surcharge',
+      'Payouts under $1,000 can incur wire/transfer minimums'
+    ],
+    hiddenFeeWatch: 'Keep PayPal/BNPL share low (+3% surcharge) and batch payouts above $1,000 to avoid withdrawal fees.'
+  },
+  {
+    id: 'stripe',
+    slug: 'stripe',
+    name: 'Stripe (+ Tax & Billing)',
+    shortName: 'Stripe',
+    category: 'gateway',
+    categoryLabel: 'Payment Gateway (DIY Tax)',
+    isMoR: false,
+    affiliateKey: 'stripe',
+    badge: 'Lowest Domestic Card Gateway',
+    tagline: 'Industry-standard payment processor (2.9% + 30¢ base, plus modular Billing/Tax/FX fees).',
+    bestFor: 'US-centric SaaS or funded startups with an accountant handling state/EU tax filings',
+    baseRatePct: 2.9,
+    fixedFeeUsd: 0.30,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 1.0,
+    subscriptionSurchargePct: 0.5,
+    paypalSurchargePct: 0.6,
+    taxAddonPct: 0.5,
+    payoutMonthlyFixedUsd: 0,
+    payoutPct: 0,
+    pros: [
+      'Unbeatable API flexibility, checkout customization, and highest global auth rates',
+      'Cheapest option for one-time domestic US card payments (2.9% + 30¢)',
+      'Instant ecosystem compatibility with virtually every tool on earth'
+    ],
+    cons: [
+      'NOT a Merchant of Record — you still owe EU VAT / US sales tax registration & filing',
+      'Stripe Billing (+0.5%), Stripe Tax (+0.5%), International (+1.5%), and FX (+1%) stack fast'
+    ],
+    hiddenFeeWatch: 'Stripe Tax (+0.5%) only calculates tax—it does NOT remit or file returns for you, and international SaaS renewals hit ~6.4% + 30¢.'
+  },
+  {
+    id: 'whop',
+    slug: 'whop',
+    name: 'Whop',
+    shortName: 'Whop',
+    category: 'creator',
+    categoryLabel: 'Creator, Community & Software Hub',
+    isMoR: true,
+    affiliateKey: 'whop',
+    badge: 'Lowest Creator Checkout (2.7% Base)',
+    tagline: 'Sell communities, courses, Discord access, and apps starting at 2.7% + 30¢ domestic.',
+    bestFor: 'Paid communities, trading/sports/AI groups, cohorts, and creator software apps',
+    baseRatePct: 2.7,
+    fixedFeeUsd: 0.30,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 1.0,
+    subscriptionSurchargePct: 0.5,
+    paypalSurchargePct: 0,
+    taxAddonPct: 2.0,
+    payoutMonthlyFixedUsd: 2.50,
+    payoutPct: 0,
+    pros: [
+      'Ultra-low 2.7% + 30¢ base domestic card processing with $0 monthly fee',
+      'Built-in course hosting, Discord/Telegram role gating, forums, and affiliate marketplace',
+      'Optional +2% tax compliance module when selling globally'
+    ],
+    cons: [
+      'Enabling automated tax remittance (+2%), billing (+0.5%), and intl (+1.5%) brings effective rate near ~6.7%',
+      '$2.50 ACH payout fee (or higher for instant withdrawals)'
+    ],
+    hiddenFeeWatch: 'Headline 2.7% applies to domestic cards without add-ons; enabling global tax remittance (+2%) and recurring billing (+0.5%) narrows the gap with Polar/Creem.'
+  },
+  {
+    id: 'gumroad',
+    slug: 'gumroad',
+    name: 'Gumroad',
+    shortName: 'Gumroad',
+    category: 'creator',
+    categoryLabel: 'Digital Product Marketplace',
+    isMoR: true,
+    affiliateKey: 'gumroad',
+    badge: 'Fastest First-$100 Storefront',
+    tagline: 'Iconic zero-setup digital product shop (10% + 50¢ fee plus card processing).',
+    bestFor: 'Validating your very first ebook, Notion template, or art pack with zero setup friction',
+    baseRatePct: 12.9,
+    fixedFeeUsd: 0.80,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 0,
+    subscriptionSurchargePct: 0,
+    paypalSurchargePct: 0,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 0,
+    payoutPct: 0,
+    pros: [
+      'Live in 5 minutes with zero monthly cost and Merchant of Record tax handling since 2025',
+      'Gumroad Discover marketplace can drive organic impulse sales (at 30% fee)',
+      'Trusted checkout brand among Notion, Blender, and design asset buyers'
+    ],
+    cons: [
+      '10% + 50¢ Gumroad cut PLUS ~2.9% + 30¢ card processing eats ~13%–16%+ of your gross revenue',
+      'Costs thousands per year compared to Lemon Squeezy, Polar, or Creem once past $500/mo'
+    ],
+    hiddenFeeWatch: 'Gumroad deducts 10% + 50¢ BEFORE payment processing (~2.9% + 30¢), and Discover marketplace sales take a hefty 30% flat cut.'
+  },
+  {
+    id: 'beehiiv',
+    slug: 'beehiiv',
+    name: 'beehiiv',
+    shortName: 'beehiiv',
+    category: 'newsletter',
+    categoryLabel: 'Newsletter & Media Platform',
+    isMoR: false,
+    affiliateKey: 'beehiiv',
+    badge: '0% Platform Cut on Paid Subs',
+    tagline: 'Flat monthly SaaS pricing ($49/mo Lite) with 0% commission on paid newsletter subscriptions.',
+    bestFor: 'Paid newsletters, media brands, and creators above ~$550/mo in subscription revenue',
+    baseRatePct: 2.9,
+    fixedFeeUsd: 0.30,
+    monthlyFeeUsd: 49,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 1.0,
+    subscriptionSurchargePct: 0.7,
+    paypalSurchargePct: 0,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 0,
+    payoutPct: 0,
+    pros: [
+      '0% platform take-rate on paid subscriptions — you only pay underlying Stripe processing',
+      'Built-in Ad Network, Boosts paid recommendations, and advanced SEO web publishing',
+      'Saves $1,000 to $9,000+/yr vs Substack once paid revenue crosses ~$500–$600/mo'
+    ],
+    cons: [
+      'Requires paid plan ($49/mo Lite annual-equivalent) to unlock paid subscriptions',
+      'Relies on your connected Stripe account rather than acting as Merchant of Record'
+    ],
+    hiddenFeeWatch: 'At $0 revenue beehiiv Lite costs $49/mo, but past ~$490/mo gross paid subscriptions, beehiiv beats Substack\'s 10% cut every single month.'
+  },
+  {
+    id: 'substack',
+    slug: 'substack',
+    name: 'Substack',
+    shortName: 'Substack',
+    category: 'newsletter',
+    categoryLabel: 'Newsletter & Reader Network',
+    isMoR: false,
+    affiliateKey: 'substack',
+    badge: '$0 Upfront Reader Network',
+    tagline: 'Free to start with built-in Substack Notes discovery, taking 10% + Stripe recurring fees.',
+    bestFor: 'Writers starting from 0 subscribers who want social network discovery before paying SaaS fees',
+    baseRatePct: 12.9,
+    fixedFeeUsd: 0.30,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 1.0,
+    subscriptionSurchargePct: 0.7,
+    paypalSurchargePct: 0,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 0,
+    payoutPct: 0,
+    pros: [
+      '$0/month fixed cost until readers actually pay you',
+      'Powerful Substack app, Notes feed, and cross-recommendations drive free subscriber growth',
+      'Dead-simple publishing workflow for essays, podcasts, and video'
+    ],
+    cons: [
+      'Permanent 10% Substack cut + 2.9% + 30¢ Stripe + 0.7% Stripe Billing = ~14%–17% lost forever',
+      'At $5,000/mo paid subscriptions, Substack\'s 10% cut alone costs $6,000/year'
+    ],
+    hiddenFeeWatch: 'Substack stacks 10% platform fee + 2.9% + 30¢ card fee + 0.7% Stripe recurring billing fee—meaning a $5/mo plan loses nearly ~19.6%!'
+  },
+  {
+    id: 'patreon',
+    slug: 'patreon',
+    name: 'Patreon',
+    shortName: 'Patreon',
+    category: 'creator',
+    categoryLabel: 'Creator Membership Platform',
+    isMoR: true,
+    affiliateKey: 'patreon',
+    badge: 'Trusted Fan Memberships',
+    tagline: 'Creator membership tiers & community chat with a 10% platform cut + processing.',
+    bestFor: 'YouTubers, podcasters, artists, and indie game devs with recurring fan patronage',
+    baseRatePct: 12.9,
+    fixedFeeUsd: 0.30,
+    monthlyFeeUsd: 0,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 1.0,
+    subscriptionSurchargePct: 0,
+    paypalSurchargePct: 1.0,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 1.00,
+    payoutPct: 0,
+    pros: [
+      '$0 upfront cost and high fan familiarity/trust on YouTube & podcasts',
+      'Handles global VAT/sales tax collection on digital memberships',
+      'Native patron-only RSS feeds, mobile app, and tiered community chat'
+    ],
+    cons: [
+      '10% standard creator fee + processing leaves ~83%–86% take-home',
+      'Significantly pricier than Whop, Polar, or beehiiv for $20+/mo memberships'
+    ],
+    hiddenFeeWatch: 'New creator accounts default to a 10% platform fee on top of payment processing and micro-transaction adjustments.'
+  },
+  {
+    id: 'shopify',
+    slug: 'shopify',
+    name: 'Shopify (Basic)',
+    shortName: 'Shopify',
+    category: 'gateway',
+    categoryLabel: 'E-Commerce Storefront',
+    isMoR: false,
+    affiliateKey: 'shopify',
+    badge: 'Full Branded Storefront',
+    tagline: '$39/mo full e-commerce store with 2.9% + 30¢ Shopify Payments processing.',
+    bestFor: 'High-volume digital/physical product brands needing custom themes, upsells, and bundles',
+    baseRatePct: 2.9,
+    fixedFeeUsd: 0.30,
+    monthlyFeeUsd: 39,
+    intlCardSurchargePct: 1.5,
+    fxSurchargePct: 1.0,
+    subscriptionSurchargePct: 0,
+    paypalSurchargePct: 0,
+    taxAddonPct: 0,
+    payoutMonthlyFixedUsd: 0,
+    payoutPct: 0,
+    pros: [
+      '0% platform commission when using Shopify Payments (only 2.9% + 30¢ card rate)',
+      'World-class checkout conversion (Shop Pay) plus rich upsell & bundle ecosystem',
+      'Beats Gumroad\'s 10% fee as soon as monthly sales pass ~$400/mo'
+    ],
+    cons: [
+      '$39/mo fixed subscription even in $0 sales months',
+      'Not a Merchant of Record on Basic plan — requires digital delivery app & tax setup'
+    ],
+    hiddenFeeWatch: 'Using a third-party payment gateway instead of Shopify Payments adds an extra 2% penalty fee on Basic.'
+  }
+];
+
+export const PLATFORM_MAP = Object.fromEntries(PLATFORMS.map((p) => [p.id, p]));
+export const PLATFORM_SLUG_MAP = Object.fromEntries(PLATFORMS.map((p) => [p.slug, p]));
