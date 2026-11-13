@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://camberlabs.github.io/marginpilot/sitemap.xml
